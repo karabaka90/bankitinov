@@ -16,8 +16,16 @@ import java.util.Date;
 @Controller
 public class PersonController {
     public final static Integer maximumAge = 150;
-
+    /**
+     * show All person in apps with alphabetic order
+     * @deprecated
+     *
+     * @param machine instance
+     * @return list Of person
+     */
+    @Deprecated
     @GetMapping("/")
+
     public String showPersons(Model model) {
         try {
             model.addAttribute("newPerson", new Person() {
@@ -29,8 +37,17 @@ public class PersonController {
         return "webAtrio";
     }
 
+    /**
+     * Save person and test his age
+     * @deprecated
+     *
+     * @param machine instance
+     * @return ok if its ok and error if its more than 150 years
+     */
+    @Deprecated
+
     @RequestMapping(value = "/postPerson", method = RequestMethod.POST)
-    public String createCourse(@ModelAttribute Person newPerson, Model model) {
+    public String createPerson(@ModelAttribute Person newPerson, Model model) {
         try {
             if (checkDate(newPerson.getDateOfBirth())) {
                 Person person = new Person(newPerson.getName(), newPerson.getSurname(), newPerson.getDateOfBirth());
@@ -53,6 +70,15 @@ public class PersonController {
         return "webAtrio";
     }
 
+
+    /**
+     * Calculate period between two date if its 150 years
+     * @deprecated
+     *
+     * @param machine instance
+     * @return true or false
+     */
+    @Deprecated
     public static boolean checkDate(Date dateOfBirth) {
         Date now = new Date();
         int difference = now.getYear() - dateOfBirth.getYear();
