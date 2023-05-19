@@ -22,10 +22,10 @@ public class PersonRestController {
 
     @PostMapping("/api/person")
     public void savePerson(@RequestBody Person person) throws Exception{
-        if (PersonController.checkDate(person.getDateOfBirth())) {
+        /*if (PersonController.checkDate(person.getDateOfBirth())) {
             personDAO.save(person);
         }else{
             throw new Exception("l'age maximum est de " + PersonController.maximumAge);
-        }
+        }*/
     }
 }

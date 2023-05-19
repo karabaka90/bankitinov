@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>WEB ATRIO</title>
+        <title>ITINOV | MY BANK</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/compass.svg" />
         <!-- Bootstrap icons-->
@@ -19,8 +19,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">WEB ATRIO !! </a>
-                <a class="btn btn-primary" href="#signup">Connectez-vous</a>
+                <a class="navbar-brand" href="itinovBank.html">ITINOV | MY BANK </a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -30,7 +29,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5"></h1>
+                            <h1 class="mb-5"><font color="red">Identifiant ou mot de passe éronnés</font> </h1>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -39,33 +38,39 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form class="form-subscribe" id="contactForm" action="#" th:action="@{/postPerson}" th:object="${newPerson}" method="POST">
+                            <form class="form-subscribe"
+                                  id="connexionForm"
+                                  action="#"
+                                  th:action="@{/check}"
+                                  th:object="${newClientAccount}"
+                                  method="POST">
                                 <!-- Email address input-->
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control form-control-lg" id="name" type="text" placeholder="Nom" th:field="*{name}" />
-                                     </div>
-                                 </div>
-                                <p> </p>
-                                 <div class="row">
-                                     <div class="col">
-                                         <input class="form-control form-control-lg" id="surname" type="text" placeholder="Prénom" th:field="*{surname}" />
-                                     </div>
-                                 </div>
-                                <p> </p>
-                                <div class="row">
-                                    <div class="col">
-                                        <input class="form-control form-control-lg" id="dateOfBirth" type="date" placeholder="Date de naissance" th:field="*{dateOfBirth}" />
+                                        <input class="form-control form-control-lg" id="name" type="text"
+                                               placeholder="Mon numéro client" th:field="*{identifier}"/>
                                     </div>
                                 </div>
-                                <p> </p>
-                                 <div class="row"><center>
-                                     <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Envoyer !</button></div></center>
-                                 </div>
+                                <p></p>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" id="password" type="password"
+                                               placeholder="Mon code secret (6 chiffres)" th:field="*{pwd}"/>
+                                    </div>
+                                </div>
+                                <p></p>
+                                <div class="row">
+                                    <center>
+                                        <div class="col-auto">
+                                            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">
+                                                Accéder à mes comptes !
+                                            </button>
+                                        </div>
+                                    </center>
+                                </div>
 
 
-
-                                 <!-- Submit success message-->
+                                <!-- Submit success message-->
                                 <!---->
                                 <!-- This is what your users will see when the form-->
                                 <!-- has successfully submitted-->
@@ -80,7 +85,9 @@
                                 <!---->
                                 <!-- This is what your users will see when there is-->
                                 <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <div class="d-none" id="submitErrorMessage">
+                                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                                </div>
                             </form>
                         </div>
                     </div>

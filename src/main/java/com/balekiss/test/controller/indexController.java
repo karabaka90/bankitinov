@@ -1,7 +1,7 @@
 package com.balekiss.test.controller;
 
 
-import com.balekiss.test.model.Person;
+import com.balekiss.test.model.ClientAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
@@ -13,26 +13,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-public class PersonController {
-    public final static Integer maximumAge = 150;
+public class indexController {
     /**
-     * show All person in apps with alphabetic order
+     * show index page
      * @deprecated
      *
      * @param machine instance
      * @return list Of person
      */
     @Deprecated
-    @GetMapping("/getClients")
-
-    public String showPersons(Model model) {
-        try {
-            model.addAttribute("newPerson", new Person() {
-            });
-
-        } catch (Exception e) {
-            e.toString();
-        }
+    @GetMapping("/")
+    public String returnIndexPage(Model model) {
         return "itinovBank";
     }
 }

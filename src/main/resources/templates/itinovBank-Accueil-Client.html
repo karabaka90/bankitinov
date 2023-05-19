@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ITINOV | MY ACCOUNTS</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/compass.svg" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="itinovBank.html">ITINOV | MY ACCOUNTS </a>
+                <a class="btn btn-primary" href="itinovBank-login.html">De-Connectez-vous</a>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">Bienvenue : <p th:text="${client.name}"></p> </h1>
+                            <!-- Signup form-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+
+                            <table class="accounts">
+                                <thead>
+                                  <tr>
+                                      <th th:width="200"><center> Compte </center></th>
+                                      <th th:width="200"><center> Solde </center></th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:if="${accounts.empty}">
+                                   <td colspan="2"> Pas de comptes encore </td>
+                                 </tr>
+                                 <tr th:each="account : ${accounts}">
+                                         <td><a th:text="    ${account.numCompte}    " th:href="@{'/showOperations/' + ${account.ID}}"> Compte </a></td>
+                                         <td class="solde-td"><span class="solde" th:style="${account.balance} <0 ? 'color: red' : 'color: green'" th:text="    ${account.balance}    "> Solde </span></td>
+                                  </tr>
+                                 </tbody>
+                            </table>
+                        </div>
+
+
+
+                </div>
+            </div>
+        </header>
+        <!-- Icons Grid-->
+
+        <!-- Image Showcases-->
+
+        <!-- Testimonials-->
+
+        <!-- Call to Action-->
+
+        <!-- Footer-->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../templates/js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    </body>
+</html>

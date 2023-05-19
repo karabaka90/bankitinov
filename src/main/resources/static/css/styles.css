@@ -7670,6 +7670,26 @@ textarea.form-control-lg {
   margin-bottom: 3rem !important;
 }
 
+.solde {
+  font-family: inherit;
+  margin-bottom: 3rem !important;
+  font-weight: bold;
+}
+
+.solde-td{
+  text-align: right;
+}
+.accounts{
+  position: center;
+  background-color: #dfe0e1;
+  opacity: 69%;
+  color: black;
+  margin-right : auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+
 .mb-auto {
   margin-bottom: auto !important;
 }
