@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.balekiss.test"},{"l":"com.balekiss.test.controller"},{"l":"com.balekiss.test.data"},{"l":"com.balekiss.test.model"}];updateSearchResults();
